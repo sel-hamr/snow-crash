@@ -1,0 +1,8 @@
+we can see that in home directory of  Level04 there is perl file with name level04.pl 
+
+we can see that the website take argument x then display with echo through user flag04
+
+we request paramter x with (`getflag`) to excute getflag in echo
+
+$> curl 'localhost:4747?x=`getflag`'
+$>Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap

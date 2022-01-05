@@ -1,0 +1,14 @@
+In the level01
+
+cat /etc/passwd 
+[...]
+flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
+[...]
+
+we found a crypted password for user flag01 we are going to use John the Ripper to crack the password 
+
+$> echo "flag01:42hDRfypTqqnw" > hash
+$> john --show hash 
+flag01:abcdefg
+
+we gonna use `abcdefg` to connect to flag01 and getflag.

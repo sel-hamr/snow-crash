@@ -1,0 +1,9 @@
+In the level00 after researching for user flag00 `find / -user "flag00"`
+we see a lot of files that need permission except for /usr/sbin/john
+
+`cat /usr/sbin/john`
+$> cdiiddwpgswtgt
+
+after trying do decrypt/decode it we find that after using `rot11` it give us `nottoohardhere` which is the password for flag00.
+
+after connecting to user flag00 we use getflag to get the flag. 

