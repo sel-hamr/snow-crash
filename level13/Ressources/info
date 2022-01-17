@@ -1,0 +1,23 @@
+we can see that in home directory of  Level13 there is executable file named level13
+
+we run this file 
+$>./level13 
+UID 2013 started us but we we expect 4242
+
+so we are going tu use gdb to change UID to 4242.
+
+(gdb) disassemble main
+
+[...]
+   0x08048595 <+9>:	call   0x8048380 <getuid@plt>
+   0x0804859a <+14>:	cmp    eax,0x1092
+[...]
+
+we see that program call function getuid to get uid of user then compares 0x1092 (4242) with our uid
+
+so we make breakpoint in 0x0804859a to change uid before compares
+
+(gdb) break *0x0804859a
+(gdb) set $eax=0x1092
+(gdb) continue
+your token is 2A31L79asukciNyi8uppkEuSx

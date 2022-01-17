@@ -1,0 +1,7 @@
+in level14 we found nothing in the home directory so we try to debug `getflag`
+
+So we check out the getflag executable and debug it
+And we find that we can get all the flags of all the other levels
+
+So we add to breakpoint in 0x0804898e and 0x08048b02
+and we change the eax to 2 in 0x0804898e and change eax to flag14 uid and we execute continue and at the end display the flag of level14

